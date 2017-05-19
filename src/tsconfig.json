@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+    "paths": {
+      "api/*": ["./api/server/*"]
+    },
+    "skipLibCheck": true,
+    "stripInternal": true,
+
+    "types": ["node","../meteor-typings","underscore"],
+    "typeRoots": ["../node_modules/@types"]
+    },
+
+    "include": [
+                "src/**/*.ts",
+                "api/**/*.ts"
+               ],
+    
+    "exclude": [
+                "node_modules",
+                "api/node_modules",
+                "api"]
+
+}
