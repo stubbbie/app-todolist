@@ -1,0 +1,27 @@
+<ul>
+    <li *ngFor="let chat of chats | async">
+      <img  [src]="chat.picture">
+      <h2>{{chat.title}}</h2>
+       <button (click)="removeChat(chat)">Remove</button>
+    </li>
+</ul>
+
+
+<!--
+    <ion-item-sliding *ngFor="let chat of chats | async">
+      <button ion-item class="chat">
+        <img class="chat-picture" [src]="chat.picture">
+        <div class="chat-info">
+          <h2 class="chat-title">{{chat.title}}</h2>
+ 
+          <span *ngIf="chat.lastMessage" class="last-message">
+            <p *ngIf="chat.lastMessage.type == 'text'" class="last-message-content last-message-content-text">{{chat.lastMessage.content}}</p>
+            <span class="last-message-timestamp">{{chat.lastMessage.createdAt }}</span>
+          </span>
+        </div>
+      </button>
+      <ion-item-options class="chat-options">
+        <button ion-button color="danger" class="option option-remove">Remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>-->

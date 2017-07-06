@@ -11,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.json'],
     modules: [helpers.root('node_modules')],
     alias: {
           'api': helpers.root('api/server')
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   externals: [
-                resolveExternals
+      resolveExternals
   ],
 
   module: {
@@ -29,7 +29,7 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('src', 'tsconfig.json') }
+            options: { configFileName: 'tsconfig.json' }
           } , 'angular2-template-loader'
         ]
       },
@@ -78,7 +78,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
-  ]
+  ],
+
+   node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    __dirname: true
+  }
 };
 
 function resolveExternals(context, request, callback) 
